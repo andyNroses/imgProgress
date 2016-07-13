@@ -1,0 +1,24 @@
+.imgProgress-round {
+    border-radius: 50%;
+}
+
+.imgProgress-img {
+    display: table;
+    margin: 0 auto;
+}
+
+.imgProgress-vertical {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.imgProgress-progress {
+    display: table;
+    height: 100%;
+    width: 100%
+    position: relative;
+}
+
+imgProgress-pie {
+
+}

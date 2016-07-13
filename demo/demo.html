@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image ProgressBar JS</title>
+    <link rel="stylesheet" type="text/css" href="../imgProgress.css">
+    <link rel="stylesheet" type="text/css" href="demo.css">
+</head>
+<body>
+    <div class="container">
+        <div class="myImgProgress"></div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="../imgProgress.js"></script>
+
+<script>
+    $(".myImgProgress").imgProgress(
+        {
+            img_url: "http://i.annihil.us/u/prod/marvel/i/mg/6/90/5148c7a1f3d94/standard_fantastic.jpg",
+            size: 250,
+            backgroundColor: 'red'
+        }
+    );
+</script>
+
+</html>
