@@ -10,6 +10,8 @@
     <div class="container">
         <div class="myImgProgress"></div>
     </div>
+
+    <div class="my2ImgProgress"></div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="../imgProgress.js"></script>
@@ -17,11 +19,16 @@
 <script>
     $(".myImgProgress").imgProgress(
         {
-            img_url: "http://i.annihil.us/u/prod/marvel/i/mg/6/90/5148c7a1f3d94/standard_fantastic.jpg",
+            img_url: "http://i.annihil.us/u/prod/marvel/i/mg/c/60/56a8e3c2afa39/standard_fantastic.jpg",
             size: 250,
-            backgroundColor: 'red'
+            backgroundColor: 'blue',
+            foregroundColor: 'white',
+            percent: 43
         }
     );
+
+
+    $(".myImgProgress").imgProgressDecreaseOf(10);
 </script>
 
 </html>
