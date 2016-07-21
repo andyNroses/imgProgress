@@ -9,9 +9,9 @@
 <body>
     <div class="container">
         <div class="myImgProgress"></div>
+        <div class="myImgProgress2"></div>
+        <div class="myImgProgress3"></div>
     </div>
-
-    <div class="my2ImgProgress"></div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="../imgProgress.js"></script>
@@ -19,16 +19,35 @@
 <script>
     $(".myImgProgress").imgProgress(
         {
-            img_url: "http://i.annihil.us/u/prod/marvel/i/mg/c/60/56a8e3c2afa39/standard_fantastic.jpg",
-            size: 250,
-            backgroundColor: 'blue',
-            foregroundColor: 'white',
-            percent: 43
+            img_url: "https://i.kinja-img.com/gawker-media/image/upload/s--de3ts4jU--/18efmtxt7i5nvjpg.jpg",
+            size: 200,
+            backgroundColor: '#222222',
+            foregroundColor: '#63e3ff',
+            percent: 23
+        }
+    );
+
+    $(".myImgProgress2").imgProgress(
+        {
+            img_url: "https://cdn.vidyard.com/thumbnails/custom/IbIp11o3ZFbPI4xxwGsPUw",
+            size: 200,
+            backgroundColor: '#66c33d',
+            foregroundColor: '#85684b',
+            percent: 55
+        }
+    );
+
+     $(".myImgProgress3").imgProgress(
+        {
+            img_url: "http://hdphonewallpapers.com/content/x13tds4awWiK9xV8jCYRRAHe6VuTcO3cWeRKsHMirPju92CeDYcB7VmwtXwI8k8h.jpg",
+            size: 200,
+            backgroundColor: '#222222',
+            foregroundColor: 'yellow',
+            percent: 64
         }
     );
 
 
-    $(".myImgProgress").imgProgressDecreaseOf(10);
 </script>
 
 </html>

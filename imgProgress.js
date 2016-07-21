@@ -6,6 +6,7 @@
         barSize: 12,
         backgroundColor: 'white',
         foregroundColor: 'red',
+        backgroundSize: 'cover',
         percent: 0
     }
 
@@ -19,6 +20,7 @@
         var backgroundColor = options.backgroundColor == null ? defaults.backgroundColor : options.backgroundColor;
         var foregroundColor = options.foregroundColor == null ? defaults.foregroundColor : options.foregroundColor;
         var percent = options.percent == null ? defaults.percent : options.percent;
+        var backgroundSize = options.backgroundSize == null ? defaults.backgroundSize : options.backgroundSize;
 
         //CURRENT IMGPROGRESS
         var myClass = this[0];
@@ -32,7 +34,8 @@
         var svg = document.createElementNS(xmlns, "svg");
         svg.setAttribute("class", "imgProgress-svg");
         svg.setAttributeNS(null, "viewBox", "0 0 32 32");
-        svg.style.background = foregroundColor;
+        svg.style.background = backgroundColor;
+        svg.style.border = "1px solid" + backgroundColor;
 
         var circle = document.createElementNS(xmlns, "circle");
         circle.setAttribute("class", "imgProgress-circle");
@@ -40,8 +43,8 @@
         circle.setAttributeNS(null, "cx", "16");
         circle.setAttributeNS(null, "cy", "16");
         circle.style.strokeDasharray = percent + " 100";
-        circle.style.fill = foregroundColor;
-        circle.style.stroke = backgroundColor;
+        circle.style.fill = backgroundColor;
+        circle.style.stroke = foregroundColor;
         svg.appendChild(circle);
         myClass.appendChild(svg);
 
@@ -49,6 +52,7 @@
         var img = document.createElement("div");
         img.setAttribute("class", "imgProgress-img");
         img.style.background  = "url(" + img_url + ") 50% 50% no-repeat, white";
+        img.style.backgroundSize = backgroundSize;
         img.style.width = (size - getPercent(barSize, size)) + "px";
         img.style.height = (size - getPercent(barSize, size)) + "px";
         img.style.top = (getPercent(barSize, size) / 2) + "px";
@@ -57,26 +61,39 @@
 
     }
 
+    //Set progression
     $.fn.imgProgressTo = function(value) {
         var myClass = this[0];
         var circle = myClass.querySelector(".imgProgress-circle");
         circle.style.strokeDasharray = value + " 100";
     }
 
+    //Increase progression of
     $.fn.imgProgressIncreaseOf = function(value) {
         var myClass = this[0];
         var circle = myClass.querySelector(".imgProgress-circle");
         var currentPercent = circle.style.strokeDasharray.split(", ")[0];
         currentPercent = Number(currentPercent) + value;
         circle.style.strokeDasharray = currentPercent + " 100";
+        return currentPercent;
     }
 
+    //Decrease progression of
     $.fn.imgProgressDecreaseOf = function(value) {
         var myClass = this[0];
         var circle = myClass.querySelector(".imgProgress-circle");
         var currentPercent = circle.style.strokeDasharray.split(", ")[0];
         currentPercent = Number(currentPercent) - value;
         circle.style.strokeDasharray = currentPercent + " 100";
+        return currentPercent;
+    }
+
+    //Get progression
+    $.fn.imgProgressGet = function() {
+        var myClass = this[0];
+        var circle = myClass.querySelector(".imgProgress-circle");
+        var currentPercent = circle.style.strokeDasharray.split(", ")[0];
+        return currentPercent;
     }
 
 }( jQuery ));
