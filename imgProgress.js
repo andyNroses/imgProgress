@@ -63,29 +63,28 @@
 
     //Set progression
     $.fn.imgProgressTo = function(value) {
-        var myClass = this[0];
-        var circle = myClass.querySelector(".imgProgress-circle");
-        circle.style.strokeDasharray = value + " 100";
+        if (value >= 0 && value <= 100) {
+            var myClass = this[0];
+            var circle = myClass.querySelector(".imgProgress-circle");
+            circle.style.strokeDasharray = value + " 100";
+            return value;
+        } else {
+            return -1;
+        }
     }
 
     //Increase progression of
-    $.fn.imgProgressIncreaseOf = function(value) {
+    $.fn.imgProgressUpdateOf = function(value) {
         var myClass = this[0];
         var circle = myClass.querySelector(".imgProgress-circle");
         var currentPercent = circle.style.strokeDasharray.split(", ")[0];
         currentPercent = Number(currentPercent) + value;
-        circle.style.strokeDasharray = currentPercent + " 100";
-        return currentPercent;
-    }
-
-    //Decrease progression of
-    $.fn.imgProgressDecreaseOf = function(value) {
-        var myClass = this[0];
-        var circle = myClass.querySelector(".imgProgress-circle");
-        var currentPercent = circle.style.strokeDasharray.split(", ")[0];
-        currentPercent = Number(currentPercent) - value;
-        circle.style.strokeDasharray = currentPercent + " 100";
-        return currentPercent;
+        if (currentPercent >= 0 && currentPercent <= 100) {
+            circle.style.strokeDasharray = currentPercent + " 100";
+            return currentPercent;
+        } else {
+            return -1;
+        }
     }
 
     //Get progression

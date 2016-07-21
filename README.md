@@ -32,13 +32,12 @@ Usage
 Methods
 -------
 
-Method | Params | Description
------- | ------ | -----------
-imgProgress | [Options](#options) | Initialize imgProgress
-imgProgressTo | `value` (integer) | Set progression to given value
-imgProgressIncreaseOf | `value` (integer) | Increase progression of given value
-imgProgressDecreaseOf | `value` (integer) | Decrease progression of given value
-imgProgressGet | None | Returns progression current value
+Method | Params | Description | Return
+------ | ------ | ----------- | -------
+imgProgress | [Options](#options) | Initialize imgProgress | None
+imgProgressTo | `value` (integer) | Set progression to given value | New progression value, `-1` if invalid
+imgProgressUpdateOf | `value` (integer) | Increase or decrease progression by given value | New progression, `-1` if invalid 
+imgProgressGet | None | Returns progression current value | Current progression value
 
 Options
 -------
