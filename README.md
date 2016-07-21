@@ -46,7 +46,7 @@ Option  | Description                | Default
 ------- | -------------------------- | -----------------------------------------------------------
 img_url | URL or path to image file. | `http://no.flyingtiger.com/Content/img/noPicture.png`
 size    | Size of the circle      | `200px`
-barSize | Size of the progression bar in percent of the size | `12%`
+barSize | Size of the progression bar in percent of the size (`0 to 100`) | `12%`
 backgroundColor | Background color of the progression bar | `white`
 foregroundColor | Front color of the progression bar | `red`
 backgroundSize | Size of image in circle (see [background-size](http://www.w3schools.com/cssref/css3_pr_background-size.asp) property) | `cover`
