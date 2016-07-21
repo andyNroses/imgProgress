@@ -34,7 +34,7 @@ Methods
 
 Method | Params | Description
 ------ | ------ | -----------
-imgProgress | [Options](options) | Initialize imgProgress
+imgProgress | [Options](#options) | Initialize imgProgress
 imgProgressTo | `value` (integer) | Set progression to given value
 imgProgressIncreaseOf | `value` (integer) | Increase progression of given value
 imgProgressDecreaseOf | `value` (integer) | Decrease progression of given value
