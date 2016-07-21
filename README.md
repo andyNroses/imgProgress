@@ -28,6 +28,18 @@ Usage
 </script>
 ```
 
+
+Methods
+-------
+
+Method | Params | Description
+------ | ------ | -----------
+imgProgress | None | Initialize imgProgress
+imgProgressTo | `value` (integer) | Set progression to given value
+imgProgressIncreaseOf | `value` (integer) | Increase progression of given value
+imgProgressDecreaseOf | `value` (integer) | Decrease progression of given value
+imgProgressGet | None | Returns progression current value
+
 Options
 -------
 
@@ -40,5 +52,4 @@ backgroundColor | Background color of the progression bar | `white`
 foregroundColor | Front color of the progression bar | `red`
 backgroundSize | Size of image in circle (see [background-size](http://www.w3schools.com/cssref/css3_pr_background-size.asp) property) | `cover`
 percent | Value of progression | `0`
-
 
