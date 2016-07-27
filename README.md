@@ -13,7 +13,7 @@ Usage
 <div class="myImgProgress"></div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="../imgProgress.js"></script>
+<script src="path/to/imgProgress.js"></script>
 
 <script>
     $(".myImgProgress").imgProgress(
